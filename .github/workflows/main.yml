@@ -1,0 +1,13 @@
+name: Unit test
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  unittest_ubuntu:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "hello"
+        run: echo Hello, world
