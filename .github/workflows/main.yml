@@ -17,27 +17,33 @@ jobs:
       - name: "Circle unit tests"
         run: python -m unittest tests/circle_tests.py
 
-      # - name: "Rectangle unit tests"
-      #   run: py -m unittest tests/rectangle_tests.py
+      - name: "Rectangle unit tests"
+        run: python -m unittest tests/rectangle_tests.py
 
-      # - name: "Square unit tests"
-      #   run: py -m unittest tests/square_tests.py
+      - name: "Square unit tests"
+        run: python -m unittest tests/square_tests.py
 
-      # - name: "Triangle unit tests"
-      #   run: py -m unittest tests/triangle_tests.py
+      - name: "Triangle unit tests"
+        run: python -m unittest tests/triangle_tests.py
   
-  # unittest_windows:
-  #   runs-on: windows-latest
+  unittest_windows:
+    runs-on: windows-latest
 
-  #   steps:
-  #     - name: "Circle unit tests"
-  #       run: py -m unittest tests/circle_tests.py
+    steps:
+      - uses: actions/checkout@v4
 
-  #     - name: "Rectangle unit tests"
-  #       run: py -m unittest tests/rectangle_tests.py
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
 
-  #     - name: "Square unit tests"
-  #       run: py -m unittest tests/square_tests.py
+      - name: "Circle unit tests"
+        run: py -m unittest tests/circle_tests.py
 
-  #     - name: "Triangle unit tests"
-  #       run: py -m unittest tests/triangle_tests.py
+      - name: "Rectangle unit tests"
+        run: py -m unittest tests/rectangle_tests.py
+
+      - name: "Square unit tests"
+        run: py -m unittest tests/square_tests.py
+
+      - name: "Triangle unit tests"
+        run: py -m unittest tests/triangle_tests.py
