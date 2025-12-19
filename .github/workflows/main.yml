@@ -8,5 +8,36 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: "hello"
-        run: echo Hello, world
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: "Circle unit tests"
+        run: python -m unittest tests/circle_tests.py
+
+      # - name: "Rectangle unit tests"
+      #   run: py -m unittest tests/rectangle_tests.py
+
+      # - name: "Square unit tests"
+      #   run: py -m unittest tests/square_tests.py
+
+      # - name: "Triangle unit tests"
+      #   run: py -m unittest tests/triangle_tests.py
+  
+  # unittest_windows:
+  #   runs-on: windows-latest
+
+  #   steps:
+  #     - name: "Circle unit tests"
+  #       run: py -m unittest tests/circle_tests.py
+
+  #     - name: "Rectangle unit tests"
+  #       run: py -m unittest tests/rectangle_tests.py
+
+  #     - name: "Square unit tests"
+  #       run: py -m unittest tests/square_tests.py
+
+  #     - name: "Triangle unit tests"
+  #       run: py -m unittest tests/triangle_tests.py
